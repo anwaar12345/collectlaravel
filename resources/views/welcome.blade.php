@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 40px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                   Trainees Information
+                </div>
+
+<div class="title links">
+<a href="{{route('store')}}">Store</a>
+</div>
+
+
+<div>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Designation</th>
+        <th>Qualification</th>
+        <th>company</th>
+        <th>Technology</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+@foreach($Stacks as $stack => $employees)
+
+    @foreach ($employees as $employee)
+    <div class="row">
+           <div class="col-sm-2"></div><div class="col-sm-2"></div><div class="col-sm-2"></div>
+    </div>
+    
+      <tr>
+
+        <td>{{ $employee['name'] }}</td>
+        <td>{{ $employee['age'] }}</td>
+        <td>{{ $employee['Designation'] }}</td>
+        <td>{{ $employee['Qualification'] }}</td>
+        <td>{{ $employee['company'] }}</td>
+        <td>{{$employee['Stack']}}</td>
+        <td>Rs {{$employee['Salary']}}-PKR</td>
+      </tr>
+
+      @endforeach
+@endforeach
+    </tbody>
+
+  </table>
+<h1>Total Salary : {{$totalsalary}}</h1>
+
+
+</div>
+            </div>
+        </div>
+    </body>
+</html>
