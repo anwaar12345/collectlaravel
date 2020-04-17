@@ -60,7 +60,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 50px;
+                margin-bottom: 10px;
             }
         </style>
     </head>
@@ -80,7 +80,7 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content" style="margin-top:750px;">
                 <div class="title m-b-md">
                    Trainees Information
                 </div>
@@ -91,10 +91,12 @@
 
 
 <div>
+@foreach($Stacks as $stack => $employees)
 
 <table class="table">
     <thead class="thead-dark">
-      <tr>
+      <tr><h3>{{$stack}}</h3></tr>
+      <tr>      
         <th>Name</th>
         <th>Age</th>
         <th>Designation</th>
@@ -105,7 +107,6 @@
       </tr>
     </thead>
     <tbody>
-@foreach($Stacks as $stack => $employees)
 
     @foreach ($employees as $employee)
     <div class="row">
@@ -116,14 +117,15 @@
 
         <td>{{ $employee['name'] }}</td>
         <td>{{ $employee['age'] }}</td>
-        <td>{{ $employee['Designation'] }}</td>
-        <td>{{ $employee['Qualification'] }}</td>
+        <td>{{ $employee['designation'] }}</td>
+        <td>{{ $employee['qualification'] }}</td>
         <td>{{ $employee['company'] }}</td>
-        <td>{{$employee['Stack']}}</td>
-        <td>Rs {{$employee['Salary']}}-PKR</td>
+        <td>{{$employee['technology']}}</td>
+        <td>Rs {{$employee['salary']}}-PKR</td>
       </tr>
 
       @endforeach
+
 @endforeach
     </tbody>
 
