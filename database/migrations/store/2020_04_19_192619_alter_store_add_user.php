@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class StorecollectionsAlter extends Migration
+class AlterStoreAddUser extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,26 @@ class StorecollectionsAlter extends Migration
     public function up()
     {
         //
-
-        
         Schema::table('storecollections', function (Blueprint $table) {
-            $table->dropColumn('freeitems');
+
+
+            $table->bigInteger('uid')->unsigned();
+
+
+
         });
 
         Schema::table('storecollections', function (Blueprint $table) {
-            $table->boolean('freeitems')->default(0)->after('price');
+
+
+            $table->foreign('uid')->references('id')->on('users')->after('freeitems');
+
+
+
+
         });
+
+
     }
 
     /**

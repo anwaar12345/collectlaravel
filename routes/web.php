@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Collectionscontroller@collections')->name('home');
 
 Route::get('/store','Storecontroller@collections')->name('store');
+Route::get('/relations/{id}', 'Storecontroller@index')->name('userproducts');

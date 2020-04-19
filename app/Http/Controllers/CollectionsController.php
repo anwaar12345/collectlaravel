@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\employees;
 
+
 class CollectionsController extends Controller
 {
     //

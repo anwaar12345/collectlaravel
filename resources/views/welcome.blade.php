@@ -115,7 +115,7 @@
     
       <tr>
 
-        <td>{{ $employee['name'] }}</td>
+        <td><a href="{{route('userproducts',$employee['id'])}}">{{ $employee['name'] }}</a></td>
         <td>{{ $employee['age'] }}</td>
         <td>{{ $employee['designation'] }}</td>
         <td>{{ $employee['qualification'] }}</td>

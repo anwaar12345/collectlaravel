@@ -20,6 +20,7 @@ class storecollectionseeder extends Seeder
             'color' => 'Black',
             'Price' => '70000',
             'freeitems' => 0,
+             'uid' => 1
         ],  [
             'name' => 'Computer',
             'company' => 'Dell',
@@ -27,6 +28,7 @@ class storecollectionseeder extends Seeder
             'color' => 'Grey',
             'Price' => '7000',
             'freeitems' => 1,
+             'uid' => 1
         ],
         [
             'name' => 'Laptop',
@@ -35,6 +37,7 @@ class storecollectionseeder extends Seeder
             'color' => 'Black',
             'Price' => '80000',
             'freeitems' => 0,
+            'uid' => 2
         ],
         [
             'name' => 'Laptop',
@@ -43,6 +46,7 @@ class storecollectionseeder extends Seeder
             'color' => 'Black',
             'Price' => '80000',
             'freeitems' => 0,
+            'uid' => 2
         ],
         [
             'name' => 'Computer',
@@ -51,6 +55,7 @@ class storecollectionseeder extends Seeder
             'color' => 'Black',
             'Price' => '80000',
             'freeitems' => 0,
+            'uid' => 1
         ],
         
     ];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\storecollections;
+use App\User;
 class Storecontroller extends Controller
 {
     public function collections()
@@ -37,7 +38,14 @@ return view('store')
 
     }
 
+public function index($id)
+{
+    # code...
+return User::find($id)->mycomputer;
 
+
+
+}
 
 
     

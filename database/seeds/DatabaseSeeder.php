@@ -11,12 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //  Model::unguard();
+         Model::unguard();
 
-        //             DB::table('employees')->truncate();
+                    DB::table('storecollections')->truncate();
+                    DB::table('employees')->truncate();
         
-        // Model::reguard();
+        Model::reguard();
         $this->call(employeeseeder::class);
         $this->call(storecollectionseeder::class);
+        $this->call(userseeder::class);
     }
 }
